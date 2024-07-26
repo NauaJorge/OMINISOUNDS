@@ -1,0 +1,241 @@
+.menu-principal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    width: 100%;
+    background-color: 141414;
+    box-sizing: border-box;
+    border-bottom: 1px solid #363636;
+}
+
+
+#textobusca {
+    color: white;
+}
+
+
+
+#menu {
+    display: none;
+    
+
+}
+
+.menu-imagem-botao {
+    display: flex;
+    padding: 0 10px 0 10px;
+
+}
+
+.pesquisa-texto {
+    width: 300px;
+    height: 20px;
+    background-color: white;
+    color: gray;
+    padding: 8px 12px 8px 0;
+    border-radius: 5px;
+    border: none; /* Remove a borda padrão */
+    outline: none; /* Remove o contorno de foco padrão */  
+    
+
+}
+
+#textobusca {
+    color: black;
+}
+
+.itens-principal {
+    flex-grow: 1;
+    display: flex;
+    
+    
+}
+
+.lista-menu-cadastro {
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+.menu-secundario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 50px;
+    width: 100%;
+    background-color: #161616;
+    
+
+}
+
+
+
+.menu-secundario  img {
+ 
+    padding: 0 5px 0 0 ;    
+}
+
+.itens-secundarios li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+
+}
+
+.itens-secundarios li a:hover {
+    color: gray;
+    
+}
+
+
+
+.itens-secundarios li {
+    display: inline-block;
+    justify-content: center;
+    margin: 30px;
+
+
+}
+
+
+
+.itens-secundarios li:hover {
+    transform: scale(1.1);
+
+
+}
+
+
+.itens-principal li {
+    display: inline-block;
+    justify-content: center;
+    margin: 30px;
+
+}
+
+.itens-principal li:hover {
+    transform: scale(1.1);
+}
+
+.itens-principal li a:hover {
+    color: gray;
+}
+
+
+.tracks-menu {
+    position: absolute;
+    left: 23%;
+    background-color:  rgb(49, 49, 49);
+}
+
+
+.search-category {
+    border: none;
+    appearance: none;
+    background-color: transparent;
+    color: white;
+
+}
+
+
+
+
+.search-category option {
+    background-color: #131111;
+    color: white;
+
+}
+
+.search-category[value="all"]~#textobusca,
+
+.search-category[value="tracks"]~#textobusca[placeholder="O que você está procurando?"]:not([data-category="Tracks"]),
+
+.search-category[value="albums"]~#textobusca[placeholder="O que você está procurando?"]:not([data-category="Albums"]) {
+
+    display: grid;
+
+
+}
+
+
+
+.lista-menu-tracks {
+    color: rgb(17, 16, 16);
+    text-decoration: none;
+    border-color: rgb(250, 245, 241);
+    font-family: "Oswald", sans-serif;
+
+
+}
+
+.tracks-menu .submenu {
+    display: none;
+    position: absolute;
+    background-color: #131111;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    /* Garante que o submenu esteja sobre outros elementos */
+}
+
+.tracks-menu:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    margin: 0;
+    padding: 10px 20px;
+}
+
+.submenu li a {
+    color: white;
+    text-decoration: none;
+}
+
+.submenu li:hover {
+    background-color: #555;
+}
+
+
+
+.lista-menu-link {
+    color: white;
+    text-decoration: none;
+}
+.lista-menu-link-s {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.movable-image {
+    transition: transform 0.5s ease;
+}
+
+.movable-image.move {
+    transform: translateX(10px); /* Ajuste o valor conforme necessário */
+}
+
+
+
+.botao-usuario {
+    display: flex;   
+    justify-content: flex-end;
+    margin-left: auto;
+   
+}
+
+.botao-usuario img {
+    display: flex;
+    align-items: center;
+    padding: 10px 10px 0 30px;
+    
+}

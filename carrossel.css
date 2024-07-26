@@ -1,0 +1,30 @@
+.swiper-container,
+.tratamento-imagem {
+    margin-top: 5%; /* Define a margem superior */
+    margin: 1%; /* Isso redefine a margem e pode anular a margem superior definida anteriormente */
+}
+
+.swiper-container {
+    width: 90px; /* Ajuste a largura para ocupar todo o espaço disponível */
+    max-width: 100%; /* Ajuste a largura máxima para ocupar todo o espaço disponível */
+    height: 100%; /* Altura fixa ou ajuste conforme necessário */
+
+}
+
+.swiper-wrapper {
+    display: flex; /* Mostra os slides em uma linha flexível */
+    transition: transform 0.3s ease; /* Adiciona transição suave ao movimento dos slides */
+}
+
+.swiper-slide {
+    flex-shrink: 0; /* Impede que os slides diminuam mais do que o necessário */
+    padding: 16px 8px;
+    border: 8px;
+    border: 1px solid transparent;
+}
+
+.trat-imagem {
+    width: 100%; /* Ajusta a largura da imagem para ocupar todo o espaço do slide */
+    height: auto; /* Altura automática para manter a proporção da imagem */
+    border-radius: 10px; /* Adiciona bordas arredondadas às imagens */
+}
