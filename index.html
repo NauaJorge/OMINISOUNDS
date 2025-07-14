@@ -132,51 +132,64 @@
         </section>
 
 
+<h2 class="texto-tracks container-sm">Trending tracks</h2>
 
-        <h2 class="texto-tracks container-sm">Trending tracks</h2>
+<!-- Swiper container -->
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="assents/img/4batz-portrait.jpg" alt="Artista 1" /></div>
+    <div class="swiper-slide"><img src="assents/img/afro-img.png" alt="Artista 2" /></div>
+    <div class="swiper-slide"><img src="assents/img/beat1.jpg" alt="Artista 3" /></div>
+    <div class="swiper-slide"><img src="assents/img/beat2.jpg" alt="Artista 4" /></div>
+    <div class="swiper-slide"><img src="assents/img/beat3.jpg" alt="Artista 5" /></div>
+    <div class="swiper-slide"><img src="assents/img/beat1.jpg" alt="Artista 6" /></div>
+    <div class="swiper-slide"><img src="assents/img/beat2.jpg" alt="Artista 7" /></div>
+  </div>
 
-        <!-- Slider main container -->
-        <div class="swiper">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                <div class="swiper-slide"><img src="assents/img/4batz-portrait.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="assents/img/afro-img.png" alt=""></div>
-                <div class="swiper-slide"><img src="assents/img/beat1.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="assents/img/beat2.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="assents/img/beat3.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="assents/img/beat1.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="assents/img/beat1.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="assents/img/beat2.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="assents/img/beat3.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="assents/img/beat1.jpg" alt=""></div>
-                ...
-            </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
+  <!-- Pagination -->
+  <div class="swiper-pagination"></div>
 
-        </div>
+  <!-- Navigation buttons -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
 
-        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
-        <!-- JavaScript para inicializar o Swiper -->
-        <script>
-            const swiper = new Swiper('.swiper', {
-                // Optional parameters
-                direction: 'horizontal',
-                slidesPerView: 5,
-                spaceBetween: 0,  // Espaço de 10px entre as imagens
-                loop: true, // Permite looping das imagens
+<script>
+  const swiper = new Swiper('.mySwiper', {
+    direction: 'horizontal',
+    loop: true,
+    spaceBetween: 16,
+    slidesPerView: 1.5,
 
-                // If we need pagination
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true, // Paginação clicável
-                },
+    breakpoints: {
+      576: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+      992: {
+        slidesPerView: 4,
+      },
+      1200: {
+        slidesPerView: 5,
+      },
+    },
 
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
 
-            });
-        </script>
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
+
 
 
         <!-- Nova seção com imagem ao lado e legendas -->
