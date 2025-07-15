@@ -4,10 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - OMINISOUND</title>
+    <title>Painel - OMINISOUND</title>
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/cadastre.css">
-    <link rel="stylesheet" href="styles/banner.css">
     <link rel="stylesheet" href="styles/rodape.css">
     <link rel="stylesheet" href="styles/header-studio.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -16,7 +14,6 @@
             margin: 0;
             font-family: 'Bebas Neue', sans-serif;
             color: beige;
-            overflow: hidden;
         }
 
         .background {
@@ -49,37 +46,26 @@
             }
         }
 
-        .form-container {
-            max-width: 400px;
+        .dashboard-container {
+            max-width: 800px;
             margin: 100px auto;
-            padding: 10px;
+            padding: 20px;
             background-color: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
-        .form-container h2 {
+        .dashboard-container h2 {
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
-        .form-container label {
-            display: block;
-            margin-bottom: 0px;
-        }
-
-        .form-container input[type="email"],
-        .form-container input[type="password"] {
-            width: 95%;
-            padding: 5px;
+        .dashboard-container p {
+            font-size: 18px;
             margin-bottom: 15px;
-            border: none;
-            border-radius: 5px;
-            background-color: #333;
-            color: #fff;
         }
 
-        .form-container button {
+        .dashboard-container .btn {
             width: 100%;
             padding: 10px;
             border: none;
@@ -88,16 +74,16 @@
             color: #fff;
             font-size: 18px;
             cursor: pointer;
-            margin-bottom: 10px;
         }
 
-        .form-container button:hover {
+        .dashboard-container .btn:hover {
             background-color: #ff5c5c;
         }
 
-        .form-container a {
-            color: #ff5c5c;
-            text-decoration: none;
+        .dashboard-container .back-btn {
+            background-color: #f1c40f;
+            color: black;
+            font-size: 16px;
         }
     </style>
 </head>
@@ -110,20 +96,15 @@
     </header>
 
     <main>
-        <div class="form-container">
-            <center><img src="assents/img/logo-botao.png" alt="Logo OMINISOUND" class="logo"></center>
-            <h2>Login</h2>
-            <form id="loginForm">
-                <label for="loginEmail">Email:</label>
-                <input type="email" id="loginEmail" name="loginEmail" required>
+        <div class="dashboard-container">
+            <h2>Painel de Controle</h2>
 
-                <label for="loginSenha">Senha:</label>
-                <input type="password" id="loginSenha" name="loginSenha" required>
+            <!-- Exibindo os dados do usuário -->
+            <p><strong>Nome:</strong> <span id="userName"></span></p>
+            <p><strong>Email:</strong> <span id="userEmail"></span></p>
+            <p><strong>Telefone:</strong> <span id="userPhone"></span></p>
 
-                <button type="submit">Entrar</button>
-            </form>
-
-            <button class="back-btn" onclick="window.location.href='cadastre.html'">Cadastrar nova conta</button>
+            <button class="btn back-btn" onclick="window.location.href='login.html'">Sair</button>
         </div>
     </main>
 
@@ -131,8 +112,20 @@
         <!-- Rodapé -->
     </footer>
 
+    <script>
+        // Recuperando os dados do usuário do localStorage
+        const usuario = JSON.parse(localStorage.getItem('usuario'));
 
-        
+        if (usuario) {
+            // Exibindo os dados no painel (sem a senha)
+            document.getElementById('userName').textContent = usuario.nome;
+            document.getElementById('userEmail').textContent = usuario.email;
+            document.getElementById('userPhone').textContent = usuario.telefone;
+        } else {
+            // Se o usuário não estiver logado, redireciona para o login
+            window.location.href = 'login.html';
+        }
+    </script>
 </body>
 
 </html>

@@ -71,6 +71,7 @@
 
         .form-container input[type="text"],
         .form-container input[type="email"],
+        .form-container input[type="password"],
         .form-container input[type="tel"] {
             width: 95%;
             padding: 5px;
@@ -105,29 +106,7 @@
             color: #ff5c5c;
             text-decoration: none;
         }
-
-        .form-container .google-btn {
-            background-color: #dd4b39;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px;
-            margin-top: 10px;
-        }
-
-        .form-container .google-btn img {
-            width: 18px;
-            height: 18px;
-            margin-right: 10px;
-        }
-
     </style>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-        (function () {
-            emailjs.init("YOUR_EMAILJS_USER_ID"); // Substitua "YOUR_EMAILJS_USER_ID" pelo seu ID de usuário do EmailJS
-        })();
-    </script>
 </head>
 
 <body>
@@ -139,7 +118,7 @@
 
     <main>
         <div class="form-container">
-            <center> <img src="assents/img/logo-botao.png" alt="Logo OMINISOUND" class="logo"></center>
+            <center><img src="assents/img/logo-botao.png" alt="Logo OMINISOUND" class="logo"></center>
             <h2>Cadastro</h2>
             <form id="cadastroForm">
                 <label for="nome">Nome:</label>
@@ -148,8 +127,8 @@
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
 
-                <label for="email">Senha:</label>
-                <input type="email" id="email" name="email" required>
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
 
                 <label for="telefone">Telefone:</label>
                 <input type="tel" id="telefone" name="telefone" required>
@@ -161,10 +140,7 @@
 
                 <button type="submit">Cadastrar</button>
             </form>
-            <button class="google-btn">
-                <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google logo">
-                Acessar com Google
-            </button>
+
             <button class="back-btn" onclick="window.location.href='index.html'">Voltar para a Página Inicial</button>
         </div>
     </main>
@@ -174,24 +150,19 @@
     </footer>
 
     <script>
+        // Função de envio do formulário
         document.getElementById('cadastroForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Evita o envio padrão do formulário
+            event.preventDefault(); // Evita o envio do formulário
 
             const nome = document.getElementById('nome').value;
             const email = document.getElementById('email').value;
             const telefone = document.getElementById('telefone').value;
 
-            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-                from_name: nome,
-                email_id: email,
-                telefone: telefone
+            // Enviando os dados para o backend ou armazenando no localStorage
+            localStorage.setItem('usuario', JSON.stringify({ nome, email, telefone }));
 
-            })
-                .then(function (response) {
-                    alert('Cadastro enviado com sucesso!', response.status, response.text);
-                }, function (error) {
-                    alert('Falha ao enviar o cadastro.', error);
-                });
+            alert('Cadastro realizado com sucesso!');
+            window.location.href = 'login.html'; // Redireciona para a página de login
         });
     </script>
 </body>
